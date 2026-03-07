@@ -42,7 +42,8 @@ export const conferencias: Conferencia[] = [
   {
     id: 2,
     titulo: "Modelo Entidad Interrelación Extendido (EE/R)",
-    smallTitulo: "Extensiones para el diseño conceptual avanzado de bases de datos",
+    smallTitulo:
+      "Extensiones para el diseño conceptual avanzado de bases de datos",
     descripcion:
       "Semántica avanzada, cardinalidades, interrelaciones débiles y jerarquías de generalización/especialización",
     icon: BookOpen,
@@ -86,7 +87,7 @@ export const conferencias: Conferencia[] = [
   },
   {
     id: 5,
-    titulo: "Dinámica del Modelo Relacional",
+    titulo: "Álgebra Relacional",
     smallTitulo: "Lenguajes Relacionales y Álgebra Relacional",
     descripcion:
       "Álgebra Relacional: operaciones monádicas (selección, proyección) y operaciones de conjunto (unión, intersección)",
@@ -102,7 +103,8 @@ export const conferencias: Conferencia[] = [
   {
     id: 6,
     titulo: "Cálculo Relacional",
-    smallTitulo: "Lenguajes No Procedimentales basados en la Lógica de Predicados",
+    smallTitulo:
+      "Lenguajes No Procedimentales basados en la Lógica de Predicados",
     descripcion:
       "Lenguajes no procedimentales basados en lógica de predicados: cálculo de tuplas y dominios",
     icon: SquareFunction,

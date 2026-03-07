@@ -75,6 +75,12 @@ function ConferenciaLayout({ titulo, smallTitulo, children, id }: ConferenciaLay
                 </div>
             </header>
             {children}
+            <div className="mt-12 py-6 border-y border-border-base/30 flex flex-col items-center">
+                <p className="text-text-secondary text-[10px] uppercase tracking-widest">
+                    Sistemas de Bases de Datos I
+                </p>
+                <p className="text-text-secondary text-[10px] opacity-50 mt-1">© 2026 Material Académico</p>
+            </div>
         </div>
     );
 }

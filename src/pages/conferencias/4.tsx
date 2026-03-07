@@ -17,15 +17,15 @@ export function TransformacionERPage() {
                 <section className="mb-12 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-highlight-purple-soft p-4 rounded-lg border border-highlight-purple transition-colors duration-300">
                         <h3 className="font-bold text-sm mb-1 uppercase text-highlight-purple">Principio 1</h3>
-                        <p className="text-sm text-text-body">Todo tipo de entidad se convierte en una relación[cite: 13].</p>
+                        <p className="text-sm text-text-body">Todo tipo de entidad se convierte en una relación.</p>
                     </div>
                     <div className="bg-highlight-purple-soft p-4 rounded-lg border border-highlight-purple transition-colors duration-300">
                         <h3 className="font-bold text-sm mb-1 uppercase text-highlight-purple">Principio 2</h3>
-                        <p className="text-sm text-text-body">Toda interrelación M:M se transforma en una relación[cite: 13].</p>
+                        <p className="text-sm text-text-body">Toda interrelación M:M se transforma en una relación.</p>
                     </div>
                     <div className="bg-highlight-purple-soft p-4 rounded-lg border border-highlight-purple transition-colors duration-300">
                         <h3 className="font-bold text-sm mb-1 uppercase text-highlight-purple">Principio 3</h3>
-                        <p className="text-sm text-text-body">Las interrelaciones 1:M se traducen en propagación de clave o nueva relación[cite: 13].</p>
+                        <p className="text-sm text-text-body">Las interrelaciones 1:M se traducen en propagación de clave o nueva relación.</p>
                     </div>
                 </section>
 
@@ -44,19 +44,19 @@ export function TransformacionERPage() {
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                                 <li className="flex items-start gap-2">
                                     <ChevronRight className="text-primary shrink-0" size={18} />
-                                    <span className="text-text-body"><strong>Dominios:</strong> Son objetos en el Modelo Relacional[cite: 14].</span>
+                                    <span className="text-text-body"><strong>Dominios:</strong> Son objetos en el Modelo Relacional.</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <ChevronRight className="text-primary shrink-0" size={18} />
-                                    <span className="text-text-body"><strong>Entidades:</strong> Cada tipo se convierte en una relación[cite: 14].</span>
+                                    <span className="text-text-body"><strong>Entidades:</strong> Cada tipo se convierte en una relación.</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <ChevronRight className="text-primary shrink-0" size={18} />
-                                    <span className="text-text-body"><strong>Atributos:</strong> Se convierten en columnas de la relación[cite: 14].</span>
+                                    <span className="text-text-body"><strong>Atributos:</strong> Se convierten en columnas de la relación.</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <ChevronRight className="text-primary shrink-0" size={18} />
-                                    <span className="text-text-body"><strong>AIP:</strong> Los Atributos Identificadores Principales se convierten en Clave Primaria[cite: 14].</span>
+                                    <span className="text-text-body"><strong>AIP:</strong> Los Atributos Identificadores Principales se convierten en Clave Primaria.</span>
                                 </li>
                             </ul>
                         </div>
@@ -64,9 +64,9 @@ export function TransformacionERPage() {
                         {/* Interrelaciones M:M */}
                         <div className="bg-surface p-6 rounded-xl shadow-sm border border-border transition-colors duration-300">
                             <h3 className="font-bold text-lg mb-2 text-primary">4.1 Interrelaciones M:M</h3>
-                            <p className="text-sm mb-4 text-text-body">Se transforma en una relación cuya <strong>Clave Primaria</strong> son los AIP (juntos) de las entidades que relaciona[cite: 15].</p>
+                            <p className="text-sm mb-4 text-text-body">Se transforma en una relación cuya <strong>Clave Primaria</strong> son los AIP (juntos) de las entidades que relaciona.</p>
                             <div className="bg-surface-elevated p-4 rounded-lg border-l-4 border-primary text-sm text-text-body">
-                                Cada AIP se convierte individualmente en una <strong>Clave Ajena</strong> referenciando a las entidades participantes[cite: 15].
+                                Cada AIP se convierte individualmente en una <strong>Clave Ajena</strong> referenciando a las entidades participantes.
                             </div>
                         </div>
 
@@ -78,7 +78,7 @@ export function TransformacionERPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                                 <div className="bg-highlight-purple-soft p-5 rounded-xl border border-highlight-purple/30 group hover:bg-highlight-purple/10 transition-colors">
                                     <div className="flex items-center gap-2 mb-3">
-                                        <div className="w-8 h-8 rounded-full bg-highlight-purple text-white flex items-center justify-center font-bold text-sm">A</div>
+                                        <div className="w-8 h-8 rounded-full bg-highlight-purple text-highlight-purple-soft flex items-center justify-center font-bold text-sm">A</div>
                                         <h4 className="font-bold text-highlight-purple uppercase tracking-wider">Propagación</h4>
                                     </div>
                                     <p className="text-xs text-text-body font-medium leading-relaxed">
@@ -87,7 +87,7 @@ export function TransformacionERPage() {
                                 </div>
                                 <div className="bg-highlight-purple-soft p-5 rounded-xl border border-highlight-purple/30 group hover:bg-highlight-purple/10 transition-colors">
                                     <div className="flex items-center gap-2 mb-3">
-                                        <div className="w-8 h-8 rounded-full bg-highlight-purple text-white flex items-center justify-center font-bold text-sm">B</div>
+                                        <div className="w-8 h-8 rounded-full bg-highlight-purple text-highlight-purple-soft flex items-center justify-center font-bold text-sm">B</div>
                                         <h4 className="font-bold text-highlight-purple uppercase tracking-wider">Crear Relación</h4>
                                     </div>
                                     <p className="text-xs text-text-body font-medium leading-relaxed">
@@ -101,9 +101,9 @@ export function TransformacionERPage() {
                         <div className="bg-surface p-6 rounded-xl shadow-sm border border-border transition-colors duration-300">
                             <h3 className="font-bold text-lg mb-2 text-primary">4.3 Interrelaciones 1:1</h3>
                             <ul className="text-sm space-y-2 list-disc list-inside text-text-body">
-                                <li>Si ambas son <strong>(0,1)</strong>: Se recomienda crear una relación independiente[cite: 17].</li>
-                                <li>Si es <strong>(0,1)</strong> y <strong>(1,1)</strong>: Se traslada la clave de la entidad (1,1) a la (0,1)[cite: 17].</li>
-                                <li>Si ambas son <strong>(1,1)</strong>: Se traslada la clave en cualquier dirección[cite: 18].</li>
+                                <li>Si ambas son <strong>(0,1)</strong>: Se recomienda crear una relación independiente.</li>
+                                <li>Si es <strong>(0,1)</strong> y <strong>(1,1)</strong>: Se traslada la clave de la entidad (1,1) a la (0,1).</li>
+                                <li>Si ambas son <strong>(1,1)</strong>: Se traslada la clave en cualquier dirección.</li>
                             </ul>
                         </div>
                     </div>
@@ -122,7 +122,7 @@ export function TransformacionERPage() {
                                 <Info size={18} /> Entidades Débiles
                             </h3>
                             <p className="text-sm leading-relaxed">
-                                Para dependencias en identificación y existencia: Utilizar mecanismos de propagación de clave y plantear la clave ajena con nulos no permitidos (<strong>NOT NULL</strong>)[cite: 18, 19].
+                                Para dependencias en identificación y existencia: Utilizar mecanismos de propagación de clave y plantear la clave ajena con nulos no permitidos (<strong>NOT NULL</strong>).
                             </p>
                         </div>
 
@@ -130,9 +130,9 @@ export function TransformacionERPage() {
                         <div className="p-6 bg-surface border border-border rounded-xl transition-colors duration-300">
                             <h3 className="font-bold text-primary mb-4">7. Jerarquías (Tipos y Subtipos)</h3>
                             <div className="space-y-2 text-xs text-text-body">
-                                <div className="flex gap-2"><strong>a)</strong><span>Todos los atributos (supertipo y subtipos) en una sola relación[cite: 20].</span></div>
-                                <div className="flex gap-2"><strong>b)</strong><span>Una relación para el supertipo y tantas relaciones como subtipos existan[cite: 20].</span></div>
-                                <div className="flex gap-2"><strong>c)</strong><span>Relaciones distintas para cada subtipo con atributos comunes incluidos[cite: 21].</span></div>
+                                <div className="flex gap-2"><strong>a)</strong><span>Todos los atributos (supertipo y subtipos) en una sola relación.</span></div>
+                                <div className="flex gap-2"><strong>b)</strong><span>Una relación para el supertipo y tantas relaciones como subtipos existan.</span></div>
+                                <div className="flex gap-2"><strong>c)</strong><span>Relaciones distintas para cada subtipo con atributos comunes incluidos.</span></div>
                             </div>
                         </div>
                     </div>
@@ -179,10 +179,10 @@ export function TransformacionERPage() {
                     </div>
                 </section>
 
-                <footer className="mt-20 pt-8 border-t border-border text-center text-text-secondary text-xs transition-colors duration-300">
+                {/* <footer className="mt-20 pt-8 border-t border-border text-center text-text-secondary text-xs transition-colors duration-300">
                     <p>Material de Apoyo: Universidad de Ciencias Informáticas (UCI) - Sistemas de Bases de Datos I</p>
-                    <p className="mt-2 uppercase tracking-widest opacity-50">Conferencia 4 - Profesor Ramiro Pérez Vázquez [cite: 31]</p>
-                </footer>
+                    <p className="mt-2 uppercase tracking-widest opacity-50">Conferencia 4 - Profesor Ramiro Pérez Vázquez</p>
+                </footer> */}
             </main>
         </>
     );

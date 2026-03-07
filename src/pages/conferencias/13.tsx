@@ -15,29 +15,33 @@ export function SQLModificacionVistasPage() {
 
                 {/* 1. SENTENCIA INSERT */}
                 <section className="mb-14">
-                    <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-blue-900 dark:text-blue-300 transition-colors duration-300">
-                        <PlusCircle className="text-blue-600 dark:text-blue-400" /> 1. Inserción de Datos (INSERT)
+                    <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-text-heading transition-colors duration-300">
+                        <PlusCircle className="text-highlight-green" /> 1. Inserción de Datos (INSERT)
                     </h2>
-                    <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-300">
-                        <p className="text-sm mb-6 leading-relaxed text-slate-700 dark:text-slate-300">
-                            La sentencia <code className="font-bold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 px-2 py-1 rounded">INSERT</code> permite añadir nuevas filas a una tabla. Puede hacerse de forma manual (valores explícitos) o masiva (desde otra consulta).
+                    <div className="bg-surface p-8 rounded-3xl shadow-sm border border-border transition-all duration-300 hover:shadow-md">
+                        <p className="text-sm mb-10 leading-relaxed text-text-body font-medium">
+                            La sentencia <span className="text-highlight-green font-black">INSERT</span> permite añadir nuevas filas a una tabla de forma persistente. Existen dos modalidades principales: manual o masiva.
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                            <div className="bg-blue-50 dark:bg-blue-950 p-5 rounded-xl border-l-4 border-blue-500 dark:border-blue-600 transition-colors duration-300">
-                                <h4 className="font-bold text-xs uppercase mb-3 text-blue-800 dark:text-blue-400">Inserción Individual</h4>
-                                <div className="bg-slate-900 dark:bg-slate-950 p-3 rounded font-mono text-[10px] text-blue-400 dark:text-blue-300 border border-slate-700 dark:border-slate-600">
-                                    <p>INSERT INTO trabajador</p>
-                                    <p>(id_trabajador, nomb_trabajador, tarifa_hr)</p>
-                                    <p>VALUES ('112', 'Carlos Pérez', 35.00);</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                            <div className="bg-surface-elevated p-6 rounded-2xl border-l-[6px] border-highlight-green shadow-inner transition-all hover:bg-surface duration-300 group">
+                                <h4 className="font-black text-[10px] uppercase mb-4 text-highlight-green tracking-[0.2em] flex items-center gap-2">
+                                    <Database size={12} /> Inserción Individual
+                                </h4>
+                                <div className="bg-black/95 p-4 rounded-xl font-mono text-[11px] text-white border border-white/5 shadow-xl group-hover:scale-[1.02] transition-transform">
+                                    <p className="text-highlight-purple font-black italic uppercase ">INSERT INTO <span className="text-white">trabajador</span></p>
+                                    <p className="text-white/60">(id_trabajador, nomb_trabajador)</p>
+                                    <p className="text-highlight-purple font-black  uppercase italic">VALUES <span className="text-highlight-green text-xs">('112', 'Carlos Pérez')</span>;</p>
                                 </div>
                             </div>
-                            <div className="bg-blue-50 dark:bg-blue-950 p-5 rounded-xl border-l-4 border-blue-500 dark:border-blue-600 transition-colors duration-300">
-                                <h4 className="font-bold text-xs uppercase mb-3 text-blue-800 dark:text-blue-400">Inserción Masiva</h4>
-                                <div className="bg-slate-900 dark:bg-slate-950 p-3 rounded font-mono text-[10px] text-blue-400 dark:text-blue-300 border border-slate-700 dark:border-slate-600">
-                                    <p>INSERT INTO nomina_historica</p>
-                                    <p>SELECT * FROM trabajador</p>
-                                    <p>WHERE tarifa_hr {'>'} 40;</p>
+                            <div className="bg-surface-elevated p-6 rounded-2xl border-l-[6px] border-highlight-green shadow-inner transition-all hover:bg-surface duration-300 group">
+                                <h4 className="font-black text-[10px] uppercase mb-4 text-highlight-green tracking-[0.2em] flex items-center gap-2">
+                                    <PlusCircle size={12} /> Inserción Masiva
+                                </h4>
+                                <div className="bg-black/95 p-4 rounded-xl font-mono text-[11px] text-white border border-white/5 shadow-xl group-hover:scale-[1.02] transition-transform">
+                                    <p className="text-highlight-purple font-black italic uppercase ">INSERT INTO <span className="text-white">nomina_historica</span></p>
+                                    <p className="text-highlight-yellow italic">SELECT <span className="text-white">*</span> FROM <span className="text-white">trabajador</span></p>
+                                    <p className="text-highlight-yellow italic">WHERE <span className="text-white">tarifa_hr {'>'} 40</span>;</p>
                                 </div>
                             </div>
                         </div>
@@ -46,51 +50,57 @@ export function SQLModificacionVistasPage() {
 
                 {/* 2. SENTENCIA UPDATE */}
                 <section className="mb-14">
-                    <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-blue-900 dark:text-blue-300 transition-colors duration-300">
-                        <RefreshCcw className="text-blue-600 dark:text-blue-400" /> 2. Actualización de Datos (UPDATE)
+                    <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-text-heading transition-colors duration-300">
+                        <RefreshCcw className="text-highlight-purple" /> 2. Actualización (UPDATE)
                     </h2>
-                    <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-300">
-                        <p className="text-sm mb-6 text-slate-700 dark:text-slate-300">
-                            Modifica los valores de una o más columnas para un conjunto de filas que cumplen una condición.
+                    <div className="bg-surface p-8 rounded-3xl shadow-sm border border-border transition-all duration-300">
+                        <p className="text-sm mb-10 text-text-body font-medium leading-relaxed border-l-4 border-highlight-purple pl-4">
+                            Modifica los valores de una o más columnas para un subconjunto de filas que cumplen una condición específica.
                         </p>
 
-                        <div className="bg-blue-900 dark:bg-blue-950 text-blue-50 dark:text-blue-100 p-6 rounded-xl mb-6 relative overflow-hidden border border-blue-800 dark:border-blue-900 transition-colors duration-300">
-                            <div className="absolute top-2 right-4 opacity-20"><AlertTriangle size={40} /></div>
-                            <h4 className="font-bold text-sm mb-2 uppercase">¡Atención con el WHERE!</h4>
-                            <p className="text-xs">
-                                Si omites la cláusula <code className="font-bold text-white bg-blue-800 dark:bg-blue-900 px-2 py-1 rounded">WHERE</code> en un UPDATE, se modificarán <strong>todas</strong> las filas de la tabla.
+                        <div className="bg-highlight-yellow/5 border border-highlight-yellow/20 p-8 rounded-3xl mb-10 relative overflow-hidden shadow-sm transition-all hover:bg-highlight-yellow/10">
+                            <div className="absolute top-[-10px] right-[-10px] opacity-10 text-highlight-yellow rotate-12"><AlertTriangle size={120} /></div>
+                            <h4 className="font-black text-[10px] mb-4 uppercase tracking-[0.2em] text-highlight-yellow flex items-center gap-2 italic underline underline-offset-4 decoration-2">
+                                <AlertTriangle size={14} /> Peligro de Integridad
+                            </h4>
+                            <p className="text-sm text-text-body leading-relaxed max-w-2xl relative z-10">
+                                Si omites la cláusula <span className="text-highlight-yellow font-black font-mono underline">WHERE</span> en un UPDATE, se modificarán <span className="text-highlight-yellow font-black uppercase text-lg tracking-tighter">todas las filas</span> de la tabla de forma irreversible.
                             </p>
                         </div>
 
-                        <div className="bg-slate-900 dark:bg-slate-950 p-5 rounded-xl font-mono text-xs text-emerald-400 dark:text-emerald-300 border border-slate-700 dark:border-slate-600 transition-colors duration-300">
-                            <p className="text-slate-500 dark:text-slate-600 mb-2">-- Ejemplo: Incrementar tarifa un 10% a electricistas</p>
-                            <p><span className="text-blue-400 dark:text-blue-300">UPDATE</span> trabajador</p>
-                            <p><span className="text-blue-400 dark:text-blue-300">SET</span> tarifa_hr = tarifa_hr * 1.10</p>
-                            <p><span className="text-blue-400 dark:text-blue-300">WHERE</span> oficio = 'Electricista';</p>
+                        <div className="bg-black/95 p-8 rounded-3xl font-mono text-sm text-white border border-white/5 shadow-2xl relative">
+                            <div className="absolute top-0 right-0 p-4 bg-highlight-purple/10 text-[9px] text-highlight-purple font-black uppercase tracking-widest italic decoration-highlight-purple">Script de Mantenimiento</div>
+                            <p className="text-highlight-green mb-6">-- Incrementar tarifa un 10% a electricistas</p>
+                            <p className="text-highlight-purple font-black uppercase italic tracking-widest"><span className="text-highlight-yellow font-black underline underline-offset-4 decoration-2">UPDATE</span> trabajador</p>
+                            <p className="text-highlight-purple font-black uppercase italic tracking-widest">SET <span className="text-white">tarifa_hr = tarifa_hr * 1.10</span></p>
+                            <p className="text-highlight-purple font-black uppercase italic tracking-widest">WHERE <span className="text-white">oficio = <span className="text-highlight-green">'Electricista'</span></span>;</p>
                         </div>
                     </div>
                 </section>
 
                 {/* 3. SENTENCIA DELETE */}
                 <section className="mb-14">
-                    <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-blue-900 dark:text-blue-300 transition-colors duration-300">
-                        <Trash2 className="text-blue-600 dark:text-blue-400" /> 3. Eliminación de Datos (DELETE)
+                    <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-text-heading transition-colors duration-300">
+                        <Trash2 className="text-highlight-yellow" /> 3. Eliminación (DELETE)
                     </h2>
-                    <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-300">
-                        <p className="text-sm mb-6 text-slate-700 dark:text-slate-300">
-                            Elimina filas completas de una tabla. Al igual que el UPDATE, su alcance está limitado por la cláusula WHERE.
+                    <div className="bg-surface p-8 rounded-3xl shadow-sm border border-border transition-all duration-300">
+                        <p className="text-sm mb-10 text-text-body font-medium leading-relaxed italic">
+                            Elimina filas completas de una tabla. Al igual que el UPDATE, su alcance está restringido por la precisión del filtro aplicado.
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="bg-slate-900 dark:bg-slate-950 p-5 rounded-xl font-mono text-xs text-white border border-slate-700 dark:border-slate-600 transition-colors duration-300">
-                                <p className="text-blue-400 dark:text-blue-300">-- Borrar un trabajador específico</p>
-                                <p className="text-slate-200 dark:text-slate-300">DELETE FROM trabajador</p>
-                                <p className="text-slate-200 dark:text-slate-300">WHERE id_trabajador = '112';</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                            <div className="bg-black/95 p-8 rounded-2xl font-mono text-xs text-white border border-white/5 shadow-xl relative overflow-hidden group">
+                                <div className="absolute top-0 left-0 w-2 h-full bg-highlight-yellow" />
+                                <p className="text-white mb-4">-- Borrar trabajador específico</p>
+                                <p className="text-highlight-purple font-black uppercase tracking-widest group-hover:opacity-100 transition-opacity">DELETE FROM <span className="text-white">trabajador</span></p>
+                                <p className="text-highlight-purple font-black uppercase tracking-widest group-hover:opacity-100 transition-opacity">WHERE <span className="text-white">id_trabajador = <span className="text-highlight-yellow">'112'</span></span>;</p>
                             </div>
-                            <div className="flex flex-col justify-center">
-                                <h4 className="font-bold text-sm text-blue-900 dark:text-blue-300 mb-2">Restricciones de Integridad</h4>
-                                <p className="text-[11px] text-slate-700 dark:text-slate-300">
-                                    No se puede eliminar una fila si su Clave Primaria está siendo referenciada por una Clave Ajena en otra tabla (a menos que esté configurado el borrado en cascada).
+                            <div className="bg-surface-elevated p-8 rounded-3xl border-2 border-border/40 shadow-sm">
+                                <h4 className="font-black text-[10px] text-highlight-purple mb-4 uppercase tracking-[0.2em] flex items-center gap-2">
+                                    <ShieldCheck size={14} /> Integridad Referencial
+                                </h4>
+                                <p className="text-xs text-text-body leading-relaxed font-medium">
+                                    El motor impedirá el borrado si la <span className="text-highlight-purple font-black underline underline-offset-4 decoration-2">Primary Key</span> está siendo referenciada por una <span className="text-highlight-yellow font-black underline underline-offset-4 decoration-2">Foreign Key</span> activa en otra tabla (Restricción de Integridad).
                                 </p>
                             </div>
                         </div>
@@ -99,68 +109,83 @@ export function SQLModificacionVistasPage() {
 
                 {/* 4. VISTAS (VIEWS) */}
                 <section className="mb-14">
-                    <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-blue-900 dark:text-blue-300 transition-colors duration-300">
-                        <Eye className="text-blue-600 dark:text-blue-400" /> 4. Vistas: Tablas Virtuales
+                    <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-text-heading transition-colors duration-300">
+                        <Eye className="text-highlight-purple" /> 4. Vistas: Tablas Virtuales
                     </h2>
-                    <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-300">
-                        <p className="text-sm mb-6 leading-relaxed text-slate-700 dark:text-slate-300">
-                            Una <strong>Vista</strong> es una tabla virtual cuyo contenido se define mediante una consulta. No almacena datos físicamente (salvo excepciones), sino que guarda la definición de la consulta.
+                    <div className="bg-surface p-8 rounded-3xl shadow-sm border border-border transition-all duration-300">
+                        <p className="text-sm mb-12 leading-relaxed text-text-body font-medium">
+                            Una <span className="text-foreground font-black uppercase underline decoration-highlight-purple/30 text-lg tracking-tighter decoration-2 underline-offset-4">Vista</span> no almacena datos físicamente; es una ventana lógica que guarda la definición de una consulta compleja.
                         </p>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                            <div className="p-4 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-xl transition-colors duration-300">
-                                <h5 className="font-bold text-xs mb-2 text-blue-900 dark:text-blue-400">Seguridad</h5>
-                                <p className="text-[10px] text-blue-800 dark:text-blue-300">Oculta columnas sensibles (como salarios) a ciertos usuarios.</p>
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                            <div className="flex flex-col items-center text-center p-8 bg-surface-elevated rounded-3xl border border-border group hover:border-highlight-purple/50 transition-all duration-300 shadow-sm hover:translate-y-[-4px]">
+                                <div className="w-14 h-14 rounded-2xl bg-highlight-purple/10 flex items-center justify-center mb-6 text-highlight-purple group-hover:scale-110 transition-transform"><ShieldCheck size={28} /></div>
+                                <h5 className="font-black text-xs text-text-primary mb-3 uppercase tracking-widest">Seguridad</h5>
+                                <p className="text-[11px] text-text-secondary leading-relaxed font-medium">Oculta columnas sensibles (salarios) a usuarios sin privilegios.</p>
                             </div>
-                            <div className="p-4 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-xl transition-colors duration-300">
-                                <h5 className="font-bold text-xs mb-2 text-blue-900 dark:text-blue-400">Simplicidad</h5>
-                                <p className="text-[10px] text-blue-800 dark:text-blue-300">Simplifica consultas complejas con muchos JOINs en una sola tabla virtual.</p>
+                            <div className="flex flex-col items-center text-center p-8 bg-surface-elevated rounded-3xl border border-border group hover:border-highlight-purple/50 transition-all duration-300 shadow-sm hover:translate-y-[-4px]">
+                                <div className="w-14 h-14 rounded-2xl bg-highlight-purple/10 flex items-center justify-center mb-6 text-highlight-purple group-hover:scale-110 transition-transform"><RefreshCcw size={28} /></div>
+                                <h5 className="font-black text-xs text-text-primary mb-3 uppercase tracking-widest">Abstracción</h5>
+                                <p className="text-[11px] text-text-secondary leading-relaxed font-medium">Simplifica joins masivos en una "tabla" virtual fácil de consultar.</p>
                             </div>
-                            <div className="p-4 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-xl transition-colors duration-300">
-                                <h5 className="font-bold text-xs mb-2 text-blue-900 dark:text-blue-400">Independencia</h5>
-                                <p className="text-[10px] text-blue-800 dark:text-blue-300">Permite cambiar la estructura física sin afectar a las aplicaciones.</p>
+                            <div className="flex flex-col items-center text-center p-8 bg-surface-elevated rounded-3xl border border-border group hover:border-highlight-purple/50 transition-all duration-300 shadow-sm hover:translate-y-[-4px]">
+                                <div className="w-14 h-14 rounded-2xl bg-highlight-purple/10 flex items-center justify-center mb-6 text-highlight-purple group-hover:scale-110 transition-transform"><Database size={28} /></div>
+                                <h5 className="font-black text-xs text-text-primary mb-3 uppercase tracking-widest">Independencia</h5>
+                                <p className="text-[11px] text-text-secondary leading-relaxed font-medium">Permite cambiar nombres en la BD física sin romper el código frontend.</p>
                             </div>
                         </div>
 
-                        <h3 className="font-bold text-sm mb-4 text-slate-800 dark:text-slate-200">Creación de una Vista:</h3>
-                        <div className="bg-slate-900 dark:bg-slate-950 p-5 rounded-xl font-mono text-xs text-blue-400 dark:text-blue-300 border border-slate-700 dark:border-slate-600 transition-colors duration-300">
-                            <p>CREATE VIEW electricistas_vsc AS</p>
-                            <p>SELECT id_trabajador, nomb_trabajador, tarifa_hr</p>
-                            <p>FROM trabajador</p>
-                            <p>WHERE oficio = 'Electricista';</p>
+                        <div className="bg-black/95 p-10 rounded-3xl shadow-2xl border border-white/5 overflow-hidden relative">
+                            <h3 className="font-black text-[10px] uppercase tracking-[0.4em] mb-6 text-white italic">Declaración de Tabla Virtual:</h3>
+                            <div className="bg-white/5 p-6 rounded-2xl font-mono text-sm leading-relaxed border border-white/10 relative z-10 backdrop-blur-md">
+                                <p className="text-white font-black uppercase underline decoration-2 underline-offset-4 italic mb-4">CREATE VIEW <span className="text-highlight-green">electricistas_vsc</span> AS</p>
+                                <p className="text-white italic"><span className="text-highlight-yellow uppercase font-black">SELECT</span> id_trabajador, nomb_trabajador, tarifa_hr</p>
+                                <p className="text-white italic"><span className="text-highlight-yellow uppercase font-black">FROM</span> trabajador</p>
+                                <p className="text-white italic"><span className="text-highlight-yellow uppercase font-black">WHERE</span> oficio = <span className="text-highlight-green">'Electricista'</span>;</p>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 {/* 5. INTEGRIDAD Y MANTENIMIENTO */}
-                <section className="mb-16">
-                    <div className="bg-blue-50 dark:bg-blue-950 border-2 border-blue-200 dark:border-blue-800 p-8 rounded-3xl transition-colors duration-300">
-                        <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-blue-900 dark:text-blue-300">
-                            <ShieldCheck className="text-blue-600 dark:text-blue-400" /> Reglas de Modificación
+                <section className="mb-20">
+                    <div className="bg-surface border-2 border-border p-12 rounded-[40px] shadow-sm relative overflow-hidden group">
+                        <div className="absolute bottom-[-20px] right-[-20px] text-highlight-purple opacity-5"><ShieldCheck size={200} /></div>
+                        <h3 className="text-2xl font-black mb-12 flex items-center gap-4 text-text-heading uppercase tracking-widest decoration-highlight-purple/30 transition-all">
+                            <ShieldCheck className="text-highlight-green" size={32} /> Reglas del Mantenimiento SQL
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs text-blue-900 dark:text-blue-200">
-                            <div className="space-y-3">
-                                <p>• <strong>Integridad de Entidad:</strong> No se pueden insertar nulos en la Clave Primaria.</p>
-                                <p>• <strong>Integridad Referencial:</strong> No se pueden insertar valores en Claves Ajenas que no existan en la tabla padre.</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-xs text-text-body font-medium leading-loose">
+                            <div className="space-y-6">
+                                <p className="p-4 bg-surface-elevated rounded-2xl border border-border/50"><strong className="text-highlight-purple uppercase font-black block mb-2 underline tracking-wider">Integridad de Entidad:</strong> La <span className="text-highlight-purple font-black italic">PK</span> es sagrada: no se admiten nulos ni duplicados bajo ninguna circunstancia.</p>
+                                <p className="p-4 bg-surface-elevated rounded-2xl border border-border/50"><strong className="text-highlight-purple uppercase font-black block mb-2 underline tracking-wider">Integridad Referencial:</strong> Nadie entra si no está la tabla padre. Una <span className="text-highlight-yellow font-black italic">FK</span> debe apuntar a una <span className="text-highlight-purple font-black italic text-sm">PK</span> existente.</p>
                             </div>
-                            <div className="space-y-3">
-                                <p>• <strong>Verificación de Tipos:</strong> Los datos deben coincidir con el dominio (tipo de dato) definido.</p>
-                                <p>• <strong>Vistas Actualizables:</strong> Solo se pueden modificar datos a través de vistas si estas se basan en una sola tabla y no tienen funciones agregadas.</p>
+                            <div className="space-y-6">
+                                <p className="p-4 bg-surface-elevated rounded-2xl border border-border/50"><strong className="text-highlight-purple uppercase font-black block mb-2 underline tracking-wider">Verificación de Tipos:</strong> El <span className="text-highlight-green font-black italic">Dominio</span> manda. SQL rechazará cadenas en campos numéricos y desbordamientos de longitud.</p>
+                                <p className="p-4 bg-surface-elevated rounded-2xl border border-border/50"><strong className="text-highlight-purple uppercase font-black block mb-2 underline tracking-wider">Vistas Actualizables:</strong> Ojo: Solo puedes hacer INSERT/UPDATE a través de una vista si esta se basa en <span className="text-white underline decoration-2 uppercase font-black">una sola tabla</span>.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Footer */}
-                <footer className="mt-14 pt-8 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center text-[10px] text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest transition-colors duration-300">
-                    <div>SBD I - Conferencia 13 (Modificación y Vistas)</div>
-                    <div className="flex gap-3 items-center">
-                        <Database size={16} className="text-blue-600 dark:text-blue-400" />
-                        <span>Material: Otras sentencias del lenguaje SQL</span>
+                {/* <footer className="mt-20 pt-10 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-6">
+                    <div className="text-[9px] font-black uppercase tracking-[0.4em] text-text-secondary text-center sm:text-left">
+                        <p className="mb-2 text-text-primary border-b border-highlight-purple w-fit">SBD I - Conferencia 13</p>
+                        <p className="text-[8px] opacity-40 italic lowercase">sql.dml.vistas.integridad</p>
                     </div>
-                </footer>
+                    <div className="flex gap-4 items-center bg-surface-elevated p-4 rounded-2xl border border-border shadow-md">
+                        <div className="w-10 h-10 rounded-full bg-highlight-purple/20 flex items-center justify-center text-highlight-purple">
+                            <Database size={20} />
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-[10px] font-black text-text-primary uppercase tracking-widest whitespace-nowrap italic">Otras sentencias del lenguaje SQL</span>
+                            <span className="text-[9px] text-text-secondary font-bold font-mono">Cátedra de Bases de Datos I</span>
+                        </div>
+                    </div>
+                </footer> */}
 
             </main>
         </>
     );
 }
+

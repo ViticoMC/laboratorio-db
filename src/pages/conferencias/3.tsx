@@ -80,9 +80,9 @@ export function ModeloRelacionalPage() {
                                 <Database size={20} /> Restricciones Inherentes
                             </h3>
                             <ul className="space-y-3 text-sm text-text-body">
-                                <li>• <strong>No duplicidad:</strong> No puede haber filas duplicadas en una relación[cite: 92].</li>
-                                <li>• <strong>Orden:</strong> El orden de las filas es irrelevante para el modelo[cite: 93].</li>
-                                <li>• <strong>Atomicidad:</strong> En el cruce de fila y columna solo puede haber un valor simple (sin multievaluados)[cite: 93].</li>
+                                <li>• <strong>No duplicidad:</strong> No puede haber filas duplicadas en una relación.</li>
+                                <li>• <strong>Orden:</strong> El orden de las filas es irrelevante para el modelo.</li>
+                                <li>• <strong>Atomicidad:</strong> En el cruce de fila y columna solo puede haber un valor simple (sin multievaluados).</li>
                             </ul>
                         </div>
 
@@ -90,9 +90,9 @@ export function ModeloRelacionalPage() {
                             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                                 <Binary size={20} /> Restricciones de Usuario
                             </h3>
-                            <p className="text-sm mb-4">Son predicados definidos sobre un conjunto de atributos, tuplas o dominios[cite: 99].</p>
+                            <p className="text-sm mb-4">Son predicados definidos sobre un conjunto de atributos, tuplas o dominios.</p>
                             <div className="bg-primary-foreground/10 p-4 rounded-lg text-xs font-mono">
-                                <p>// Ejemplo de Esquema Relacional [cite: 106]</p>
+                                <p>// Ejemplo de Esquema Relacional </p>
                                 <p>{"< {Ri}, {Vi} >"}</p>
                                 <p className="mt-2">Ri: Conjunto de esquemas</p>
                                 <p>Vi: Restricciones interrelacionales</p>
@@ -103,10 +103,10 @@ export function ModeloRelacionalPage() {
                     {/* Integridad Referencial */}
                     <div className="mt-8 bg-surface-elevated border-highlight-purple/30 border-2 p-8 rounded-3xl transition-colors duration-300">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="bg-highlight-purple p-2 rounded-xl text-white">
+                            <div className="bg-highlight-purple p-2 rounded-xl text-highlight-purple-soft">
                                 <Combine size={24} />
                             </div>
-                            <h3 className="font-bold text-2xl text-highlight-purple">Integridad Referencial</h3>
+                            <h3 className="font-bold text-2xl text-highlight-purple uppercase tracking-tight">Integridad Referencial</h3>
                         </div>
                         <p className="text-md mb-8 text-text-body leading-relaxed">
                             Asegura que las referencias entre tablas sean consistentes. Cuando se intenta eliminar una tupla referenciada, existen tres opciones fundamentales:
@@ -129,7 +129,7 @@ export function ModeloRelacionalPage() {
                 </section>
 
 
-                {/* Resumen del Modelo [cite: 104] */}
+                {/* Resumen del Modelo  */}
                 <section className="mb-16">
                     <div className="bg-surface-elevated text-text-primary p-8 rounded-3xl transition-colors duration-300 border border-border">
                         <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
@@ -139,14 +139,14 @@ export function ModeloRelacionalPage() {
                             <div className="space-y-4">
                                 <p className="text-lg font-mono text-primary">R(A: D, S)</p>
                                 <ul className="text-sm space-y-2 opacity-80 text-text-body">
-                                    <li><strong>R:</strong> Nombre de la relación[cite: 104].</li>
-                                    <li><strong>A:</strong> Lista de atributos[cite: 104].</li>
-                                    <li><strong>D:</strong> Dominios asociados[cite: 105].</li>
-                                    <li><strong>S:</strong> Restricciones de integridad (Inherentes y de Usuario)[cite: 106].</li>
+                                    <li><strong>R:</strong> Nombre de la relación.</li>
+                                    <li><strong>A:</strong> Lista de atributos.</li>
+                                    <li><strong>D:</strong> Dominios asociados.</li>
+                                    <li><strong>S:</strong> Restricciones de integridad (Inherentes y de Usuario).</li>
                                 </ul>
                             </div>
                             <div className="border-l border-border pl-8 hidden md:block italic text-text-secondary text-sm">
-                                "El objetivo fundamental es mantener la independencia de la estructura lógica respecto al modo de almacenamiento físico"[cite: 91].
+                                "El objetivo fundamental es mantener la independencia de la estructura lógica respecto al modo de almacenamiento físico".
                             </div>
                         </div>
                     </div>
@@ -187,11 +187,8 @@ export function ModeloRelacionalPage() {
                         <li>• Codd, E.F. - Fundamentos del Modelo Relacional.</li>
                         <li>• Material de Conferencia: "El Modelo Relacional" - Beatriz.</li>
                     </ul>
-                    <div className="mt-10 text-center text-[10px] text-text-secondary/60">
-                        Sistemas de Bases de Datos I - 2026 - Conferencia 3
-                    </div>
-                </footer>            
-                </main>
+                </footer>
+            </main>
         </>
     );
 }

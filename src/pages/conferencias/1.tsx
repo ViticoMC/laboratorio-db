@@ -1,4 +1,4 @@
-import { Database, Server, HardDrive, Users, Layers, Share2, ShieldCheck, Key, ListTree, ChevronRight } from 'lucide-react';
+import { Database, Server, HardDrive, Users, Layers, Share2, ShieldCheck, Key, ListTree, ChevronRight, AlertCircle } from 'lucide-react';
 
 export function DatabaseLecturePage() {
     return (
@@ -94,116 +94,233 @@ export function DatabaseLecturePage() {
                 </section>
 
                 {/* Arquitectura ANSI/SPARC */}
-                <section className="mb-12 p-8 bg-surface-elevated text-text-primary rounded-2xl shadow-lg border border-border-base">
-                    <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-brand-secondary">
+                <section className="mb-12 p-8 bg-surface-elevated text-text-primary rounded-2xl shadow-lg border border-border-base relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-highlight-purple/5 -rotate-45 translate-x-16 -translate-y-16"></div>
+                    <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-highlight-purple">
                         <Layers /> Arquitectura de tres niveles ANSI/SPARC (1978)
                     </h2>
                     <div className="space-y-4">
-                        <div className="flex items-center gap-4 bg-surface p-4 rounded border-l-4 border-brand-primary">
-                            <span className="bg-brand-primary px-3 py-1 rounded font-mono ">Externo</span>
-                            <p className="text-text-primary">Vistas de usuario (Lógico)</p>
+                        <div className="flex items-center gap-4 bg-surface p-4 rounded-xl border-l-[6px] border-highlight-purple shadow-sm hover:translate-x-2 transition-transform">
+                            <span className="bg-highlight-purple text-highlight-purple-soft px-3 py-1 rounded font-mono font-bold text-xs uppercase shadow-sm">Externo</span>
+                            <p className="text-text-primary font-medium">Vistas de usuario (Lógico)</p>
                         </div>
-                        <div className="flex items-center gap-4 bg-surface p-4 rounded border-l-4 border-brand-secondary">
-                            <span className="bg-brand-secondary px-3 py-1 rounded font-mono ">Conceptual</span>
-                            <p className="text-text-primary">Vista de usuarios unificada (Intermedio)</p>
+                        <div className="flex items-center gap-4 bg-surface p-4 rounded-xl border-l-[6px] border-highlight-purple/60 shadow-sm hover:translate-x-2 transition-transform">
+                            <span className="bg-highlight-purple/60 text-highlight-purple-soft px-3 py-1 rounded font-mono font-bold text-xs uppercase shadow-sm">Conceptual</span>
+                            <p className="text-text-primary font-medium">Vista de usuarios unificada (Intermedio)</p>
                         </div>
-                        <div className="flex items-center gap-4 bg-surface p-4 rounded border-l-4 border-brand-accent">
-                            <span className="bg-brand-accent px-3 py-1 rounded font-mono ">Interno</span>
-                            <p className="text-text-primary">Base de datos física</p>
+                        <div className="flex items-center gap-4 bg-surface p-4 rounded-xl border-l-[6px] border-highlight-purple/30 shadow-sm hover:translate-x-2 transition-transform">
+                            <span className="bg-highlight-purple/30 text-highlight-purple px-3 py-1 rounded font-mono font-bold text-xs uppercase shadow-sm border border-highlight-purple/20">Interno</span>
+                            <p className="text-text-primary font-medium">Base de datos física</p>
                         </div>
                     </div>
                 </section>
 
                 {/* Modelo Entidad/Interrelación */}
                 <section className="mb-12">
-                    <h2 className="text-3xl font-bold mb-8 border-b-2 border-border-base pb-2 text-text-heading">Modelo Entidad / Interrelación (E/R)</h2>
+                    <h2 className="text-3xl font-bold mb-8 border-b-4 border-highlight-green/30 pb-2 text-text-heading">Modelo Entidad / Interrelación (E/R)</h2>
 
                     {/* Entidades */}
                     <div className="mb-10">
-                        <h3 className="text-2xl font-semibold mb-4 text-brand-primary italic">1. Entidades</h3>
+                        <h3 className="text-2xl font-black mb-4 text-highlight-green flex items-center gap-2">
+                            <div className="w-8 h-8 rounded bg-highlight-green/10 flex items-center justify-center text-highlight-green">1</div>
+                            Entidades
+                        </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="border-2 border-dashed border-brand-primary p-4 flex items-center justify-center bg-surface rounded-lg">
-                                <span className="text-xl font-bold tracking-widest uppercase text-text-heading">[ PACIENTE ]</span>
+                            <div className="border-4 border-dashed border-highlight-green/40 p-10 flex items-center justify-center bg-highlight-green-soft rounded-2xl shadow-inner group">
+                                <span className="text-2xl font-black tracking-[0.3em] uppercase text-highlight-green group-hover:scale-110 transition-transform cursor-default">
+                                    [ PACIENTE ]
+                                </span>
                             </div>
-                            <div className="space-y-2 text-sm">
-                                <p className="text-text-primary"><strong>Reglas (Tardieu 1979):</strong></p>
-                                <ul className="list-disc ml-5 text-text-secondary">
-                                    <li>Tener existencia propia.</li>
-                                    <li>Cada ocurrencia debe ser distinguible.</li>
-                                    <li>Todas las ocurrencias deben tener mismas características.</li>
-                                </ul>
-                                <p className="mt-2 font-semibold text-text-primary">Tipos:</p>
-                                <p className="text-text-body">Regulares (existen por sí mismas) y Débiles (dependen de otra).</p>
+                            <div className="space-y-4">
+                                <div className="bg-surface p-4 rounded-xl border border-border-base shadow-sm">
+                                    <p className="text-highlight-green font-black uppercase text-xs tracking-widest mb-2">Reglas (Tardieu 1979):</p>
+                                    <ul className="space-y-2 text-sm text-text-body">
+                                        <li className="flex items-start gap-2">
+                                            <ChevronRight className="text-highlight-green shrink-0 mt-0.5" size={14} />
+                                            <span>Tener existencia propia en el mundo real.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <ChevronRight className="text-highlight-green shrink-0 mt-0.5" size={14} />
+                                            <span>Cada ocurrencia debe ser distinguible unívocamente.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <ChevronRight className="text-highlight-green shrink-0 mt-0.5" size={14} />
+                                            <span>Mismas características para todas las ocurrencias.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="p-4 bg-highlight-yellow-soft rounded-xl border-l-4 border-highlight-yellow flex gap-3 text-sm">
+                                    <AlertCircle className="text-highlight-yellow shrink-0" size={18} />
+                                    <p className="text-text-body"><span className="font-bold text-highlight-yellow-dark">Tipos:</span> Regulares (independientes) y Débiles (dependen de otra entidad).</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Interrelaciones */}
-                    <div className="mb-10 bg-surface p-6 rounded-lg shadow-sm border border-border-base">
-                        <h3 className="text-2xl font-semibold mb-4 text-brand-primary flex items-center gap-2">
-                            <Share2 size={24} /> 2. Interrelaciones
+                    <div className="mb-10 bg-surface p-8 rounded-2xl shadow-md border-t-4 border-highlight-green transition-all hover:shadow-lg">
+                        <h3 className="text-2xl font-black mb-4 text-highlight-green flex items-center gap-2">
+                            <Share2 size={28} /> 2. Interrelaciones
                         </h3>
-                        <p className="mb-4 text-text-body">Asociación o correspondencia entre entidades.</p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                            <div className="p-3 bg-surface-elevated rounded border-l-4 border-brand-primary">
-                                <p className="text-text-primary"><strong>Grado:</strong> Número de entidades participantes.</p>
-                                <p className="text-text-body"><strong>Función:</strong> Papel de cada entidad.</p>
+                        <p className="mb-6 text-text-body font-medium">Asociación o correspondencia entre entidades en el modelo conceptual.</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                            <div className="p-4 bg-highlight-green-soft rounded-xl border-l-4 border-highlight-green shadow-sm">
+                                <h4 className="font-black text-highlight-green uppercase text-xs mb-3 tracking-widest">Atributos de la Relación</h4>
+                                <div className="space-y-2">
+                                    <p className="text-text-primary"><strong>Grado:</strong> Número de entidades participantes.</p>
+                                    <p className="text-text-secondary"><strong>Función:</strong> Papel de cada entidad en la relación.</p>
+                                </div>
                             </div>
-                            <div className="p-3 bg-surface-elevated rounded border-l-4 border-brand-secondary">
-                                <p className="text-text-primary"><strong>Tipo de correspondencia:</strong></p>
-                                <p className="font-mono font-bold text-brand-primary mt-1">1:1 | 1:N | N:M</p>
+                            <div className="p-4 bg-highlight-green-soft rounded-xl border-l-4 border-highlight-green shadow-sm flex flex-col justify-center">
+                                <h4 className="font-black text-highlight-green uppercase text-xs mb-3 tracking-widest text-center">Tipo de correspondencia</h4>
+                                <div className="flex justify-around items-center bg-surface p-3 rounded-lg border border-highlight-green/20">
+                                    <span className="font-black text-highlight-green text-lg">1:1</span>
+                                    <span className="w-1 h-1 rounded-full bg-highlight-green/40"></span>
+                                    <span className="font-black text-highlight-green text-lg">1:N</span>
+                                    <span className="w-1 h-1 rounded-full bg-highlight-green/40"></span>
+                                    <span className="font-black text-highlight-green text-lg">N:M</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Atributos */}
                     <div>
-                        <h3 className="text-2xl font-semibold mb-4 text-brand-primary flex items-center gap-2">
-                            <ShieldCheck size={24} /> 3. Atributos e Identificadores
+                        <h3 className="text-2xl font-black mb-6 text-highlight-green flex items-center gap-2">
+                            <ShieldCheck size={28} /> 3. Atributos e Identificadores
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="space-y-4">
-                                <div className="p-4 bg-surface-elevated rounded border-l-4 border-brand-primary">
-                                    <h4 className="font-bold flex items-center gap-1 text-brand-primary"><Key size={16} /> Identificador Principal</h4>
-                                    <p className="text-sm text-text-body mt-1">Conjunto mínimo de atributos (Llave/Superclave) que identifica unívocamente cada ocurrencia.</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="space-y-6">
+                                <div className="p-5 bg-highlight-yellow-soft rounded-2xl border-l-[10px] border-highlight-yellow shadow-sm hover:shadow-md transition-shadow">
+                                    <h4 className="font-black flex items-center gap-2 text-highlight-yellow-dark mb-2">
+                                        <Key size={20} className="text-highlight-yellow" />
+                                        IDENTIFICADOR PRINCIPAL (AIP)
+                                    </h4>
+                                    <p className="text-sm text-text-body leading-relaxed">
+                                        Conjunto mínimo de atributos que identifica **unívocamente** cada ocurrencia de una entidad.
+                                    </p>
                                 </div>
-                                <div className="p-4 bg-surface-elevated rounded border-l-4 border-border-base">
-                                    <h4 className="font-bold text-text-heading">Identificador Alternativo</h4>
-                                    <p className="text-sm text-text-body mt-1">Llave candidata que también podría identificar unívocamente la entidad.</p>
+                                <div className="p-5 bg-surface-elevated rounded-2xl border-l-4 border-border-base shadow-sm">
+                                    <h4 className="font-bold text-text-heading mb-1">Identificador Alternativo</h4>
+                                    <p className="text-sm text-text-secondary">Llave candidata que no fue elegida como principal pero garantiza unicidad.</p>
                                 </div>
                             </div>
-                            <div className="flex flex-col justify-center items-center p-6 border-2 border-brand-primary rounded-lg bg-surface">
-                                <div className="w-32 h-16 border-2 border-brand-primary rounded-full flex items-center justify-center text-brand-primary font-bold mb-2">
+                            <div className="flex flex-col justify-center items-center p-8 border-4 border-dashed border-highlight-green/30 rounded-3xl bg-highlight-green-soft/10 group">
+                                <div className="w-40 h-20 border-4 border-highlight-green rounded-full flex items-center justify-center text-highlight-green font-black text-xl bg-surface shadow-lg group-hover:scale-105 transition-transform">
                                     Atributo
                                 </div>
-                                <p className="text-xs text-text-body underline italic">Representación gráfica: Óvalo</p>
+                                <div className="w-1 h-6 bg-highlight-green/20"></div>
+                                <p className="text-xs font-black text-highlight-green uppercase tracking-[0.2em]">Simbología: Óvalo</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Historia y Bibliografía */}
-                <footer className="mt-20 pt-8 border-t border-border-base bg-surface-elevated">
-                    <div className="max-w-5xl mx-auto px-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div>
-                                <h4 className="font-bold text-lg mb-2 underline text-text-heading">Hitos Históricos</h4>
-                                <ul className="text-sm space-y-1 text-text-body">
-                                    <li><strong>1960:</strong> Charles Bachman (General Electric) crea IDS (Modelo de Red). Premio Turing 1973.</li>
-                                    <li><strong>Finales 60s:</strong> IBM desarrolla IMS (Modelo Jerárquico) y sistema SABRE.</li>
-                                </ul>
+                {/* Modelos de Datos */}
+                <section className="mb-12">
+                    <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-text-heading">
+                        <Share2 className="text-highlight-purple" /> Modelos de Datos
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-highlight-purple-soft p-6 rounded-2xl border-2 border-highlight-purple shadow-sm hover:-translate-y-1 transition-transform flex flex-col justify-around">
+                            <h4 className="font-bold text-highlight-purple mb-2 uppercase text-sm tracking-widest text-center">Jerárquico</h4>
+                            <div className="flex flex-col items-center gap-1 opacity-80">
+                                <div className="w-8 h-8 rounded-full bg-highlight-purple flex items-center justify-center text-white text-[10px]">R</div>
+                                <div className="w-0.5 h-3 bg-highlight-purple/40"></div>
+                                <div className="flex gap-4">
+                                    <div className="w-6 h-6 rounded bg-highlight-purple/60"></div>
+                                    <div className="w-6 h-6 rounded bg-highlight-purple/60"></div>
+                                </div>
                             </div>
-                            <div>
-                                <h4 className="font-bold text-lg mb-2 underline text-text-heading">Bibliografía</h4>
-                                <ul className="text-sm space-y-1 italic text-text-body">
-                                    <li>C.J. Date - Introducción a los SBD (Cap. 1 y 2).</li>
-                                    <li>Jeffrey D. Ullman - Principles of Database Systems.</li>
+                            <p className="text-xs text-text-body mt-4 text-center italic">Estructura de árbol: Segmentos y Padres/Hijos.</p>
+                        </div>
+                        <div className="bg-highlight-purple-soft p-6 rounded-2xl border-2 border-highlight-purple shadow-sm hover:-translate-y-1 transition-transform flex flex-col justify-around">
+                            <h4 className="font-bold text-highlight-purple mb-2 uppercase text-sm tracking-widest text-center">Red</h4>
+                            <div className="flex flex-col items-center gap-2 opacity-80">
+                                <div className="relative w-16 h-10">
+                                    <div className="absolute top-0 left-0 w-4 h-4 rounded-full bg-highlight-purple"></div>
+                                    <div className="absolute top-0 right-0 w-4 h-4 rounded-full bg-highlight-purple"></div>
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-highlight-purple"></div>
+                                    <div className="absolute top-2 left-2 w-12 h-0.5 bg-highlight-purple/30 rotate-12"></div>
+                                    <div className="absolute top-2 right-2 w-8 h-0.5 bg-highlight-purple/30 -rotate-45"></div>
+                                </div>
+                            </div>
+                            <p className="text-xs text-text-body mt-4 text-center italic">Estructura de grafos: Propietarios y Miembros.</p>
+                        </div>
+                        <div className="bg-highlight-purple-soft p-6 rounded-2xl border-2 border-highlight-purple shadow-lg hover:-translate-y-1 transition-transform flex flex-col justify-around">
+                            <h4 className="font-bold text-highlight-purple mb-2 uppercase text-sm tracking-widest text-center">Relacional</h4>
+                            <div className="flex flex-col items-center gap-1 opacity-90">
+                                <div className="grid grid-cols-3 gap-0.5 border border-highlight-purple">
+                                    {[...Array(9)].map((_, i) => (
+                                        <div key={i} className="w-3 h-2 bg-highlight-purple/40"></div>
+                                    ))}
+                                </div>
+                            </div>
+                            <p className="text-xs text-text-body mt-4 text-center italic">Basado en tablas (Tuplas y Atributos). El estándar actual.</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Independencia de Datos */}
+                <section className="mb-12 bg-highlight-yellow-soft p-8 rounded-3xl border border-highlight-yellow/30 relative overflow-hidden">
+                    <div className="absolute -right-10 -top-10 text-highlight-yellow opacity-10">
+                        <Layers size={200} />
+                    </div>
+                    <h2 className="text-2xl font-bold mb-6 text-highlight-yellow-dark flex items-center gap-2 relative">
+                        <ShieldCheck /> Independencia de Datos
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                        <div className="space-y-2">
+                            <h4 className="font-bold text-lg text-text-heading flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-highlight-yellow"></span> Física
+                            </h4>
+                            <p className="text-sm text-text-body pl-4 border-l-2 border-highlight-yellow/50">
+                                Capacidad de modificar el esquema **interno** sin tener que alterar el esquema conceptual o los externos. (Ej: mover archivos de disco).
+                            </p>
+                        </div>
+                        <div className="space-y-2">
+                            <h4 className="font-bold text-lg text-text-heading flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-highlight-yellow text-highlight-yellow"></span> Lógica
+                            </h4>
+                            <p className="text-sm text-text-body pl-4 border-l-2 border-highlight-yellow/50">
+                                Capacidad de modificar el esquema **conceptual** sin tener que alterar los esquemas externos. (Ej: añadir un nuevo campo a una tabla).
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Historia y Bibliografía */}
+                <footer className="mt-20 border-t border-border-base bg-surface-elevated/50 overflow-hidden">
+                    <div className="max-w-5xl mx-auto px-6 py-12">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
+                            <div className="space-y-4">
+                                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-highlight-green mb-4">Hitos Históricos</h4>
+                                <div className="space-y-4">
+                                    <div className="flex gap-4 items-start pb-4 border-b border-border-base/50">
+                                        <span className="bg-highlight-green-soft text-highlight-green font-mono font-bold px-2 py-1 rounded">1960</span>
+                                        <p className="text-sm text-text-body"><strong>Charles Bachman</strong> (General Electric) crea IDS (Modelo de Red). Premio Turing 1973.</p>
+                                    </div>
+                                    <div className="flex gap-4 items-start">
+                                        <span className="bg-highlight-green-soft text-highlight-green font-mono font-bold px-2 py-1 rounded">1968</span>
+                                        <p className="text-sm text-text-body"><strong>IBM</strong> desarrolla IMS (Modelo Jerárquico) y el sistema de reservación aérea <strong>SABRE</strong>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="space-y-4">
+                                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-highlight-purple mb-4">Bibliografía Recomendada</h4>
+                                <ul className="text-sm space-y-3 italic text-text-secondary list-none">
+                                    <li className="flex gap-2 items-center">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-highlight-purple"></div>
+                                        <span>C.J. Date - Introducción a los SBD (Cap. 1 y 2).</span>
+                                    </li>
+                                    <li className="flex gap-2 items-center">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-highlight-purple"></div>
+                                        <span>Jeffrey D. Ullman - Principles of Database Systems.</span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                        <p className="text-center text-text-secondary text-xs mt-10">
-                            © 2026 - Material de Apoyo Académico: Sistemas de Bases de Datos I
-                        </p>
+
                     </div>
                 </footer>
             </main>

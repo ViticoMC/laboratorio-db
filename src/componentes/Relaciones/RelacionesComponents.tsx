@@ -1,4 +1,4 @@
-import { Database, GitBranch, ListChecks, ArrowRight, PlusCircle, Tags, Settings2 } from "lucide-react";
+import { Database, GitBranch, ListChecks, ArrowRight, Tags, Settings2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { FullRelation } from "@/hooks/useRelaciones";
 

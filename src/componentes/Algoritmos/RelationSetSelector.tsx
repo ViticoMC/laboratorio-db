@@ -1,6 +1,6 @@
 import React from 'react';
 import { Relation, FullFdSet } from "@/types/database";
-import { Database, ListChecks, CheckCircle2, ChevronRight } from "lucide-react";
+import { Database, ListChecks, CheckCircle2 } from "lucide-react";
 
 interface SelectorProps {
     relaciones: Relation[];
@@ -26,14 +26,14 @@ export const RelationSetSelector: React.FC<SelectorProps> = ({
                 <label className="text-xs font-black uppercase tracking-widest text-text-secondary flex items-center gap-2">
                     <Database size={14} className="text-primary" /> 1. Selecciona Relación
                 </label>
-                <div className="grid grid-cols-1 gap-2 max-h-[200px] overflow-y-auto pr-2 custom-scrollbar">
+                <div className="grid grid-cols-1 gap-2 max-h-50 overflow-y-auto pr-2 custom-scrollbar">
                     {relaciones.map((rel) => (
                         <button
                             key={rel.id}
                             onClick={() => onSelectRel(rel.id)}
                             className={`flex items-center justify-between p-4 rounded-xl border transition-all text-left ${selectedRelId === rel.id
-                                    ? "bg-primary/10 border-primary shadow-sm"
-                                    : "bg-surface border-border hover:border-primary/50"
+                                ? "bg-primary/10 border-primary shadow-sm"
+                                : "bg-surface border-border hover:border-primary/50"
                                 }`}
                         >
                             <span className={`font-bold ${selectedRelId === rel.id ? "text-primary" : "text-text-primary"}`}>
@@ -50,24 +50,30 @@ export const RelationSetSelector: React.FC<SelectorProps> = ({
                 <label className="text-xs font-black uppercase tracking-widest text-text-secondary flex items-center gap-2">
                     <ListChecks size={14} className="text-secondary" /> 2. Selecciona Conjunto de DF
                 </label>
-                <div className="grid grid-cols-1 gap-2 max-h-[200px] overflow-y-auto pr-2 custom-scrollbar">
+                <div className="p-4 bg-surface border border-border rounded-xl">
                     {selectedRelId ? (
                         fdSets.length > 0 ? (
-                            fdSets.map((set) => (
-                                <button
-                                    key={set.id}
-                                    onClick={() => onSelectSet(set.id)}
-                                    className={`flex items-center justify-between p-4 rounded-xl border transition-all text-left ${selectedSetId === set.id
-                                            ? "bg-secondary/10 border-secondary shadow-sm"
-                                            : "bg-surface border-border hover:border-secondary/50"
-                                        }`}
+                            <div className="space-y-2">
+                                <select
+                                    value={selectedSetId ?? ""}
+                                    onChange={(e) => onSelectSet(Number(e.target.value))}
+                                    className="w-full px-4 py-3 bg-background border border-border rounded-xl outline-none text-text-primary font-bold focus:border-secondary/60"
                                 >
-                                    <span className={`font-bold ${selectedSetId === set.id ? "text-secondary" : "text-text-primary"}`}>
-                                        {set.name || `Conjunto ${set.id}`}
-                                    </span>
-                                    {selectedSetId === set.id && <CheckCircle2 size={16} className="text-secondary" />}
-                                </button>
-                            ))
+                                    <option value="" disabled>
+                                        Elige un conjunto principal...
+                                    </option>
+                                    {fdSets.map((set) => (
+                                        <option key={set.id} value={set.id}>
+                                            {set.name || `Conjunto ${set.id}`}
+                                        </option>
+                                    ))}
+                                </select>
+                                {selectedSetId && (
+                                    <p className="text-xs font-bold text-secondary">
+                                        Conjunto seleccionado: {fdSets.find(set => set.id === selectedSetId)?.name || `Conjunto ${selectedSetId}`}
+                                    </p>
+                                )}
+                            </div>
                         ) : (
                             <div className="p-4 bg-surface/50 border border-dashed border-border rounded-xl text-center text-text-secondary text-sm">
                                 No hay conjuntos para esta relación

@@ -1,5 +1,5 @@
 
-import { ShieldCheck, Lock, EyeOff, UserCheck, Key, Database, AlertCircle, UserPlus, UserMinus, BookOpen } from 'lucide-react';
+import { ShieldCheck, Lock, EyeOff, UserCheck, Key, AlertCircle, UserPlus, UserMinus } from 'lucide-react';
 
 export function VistasYSeguridadPage() {
     return (

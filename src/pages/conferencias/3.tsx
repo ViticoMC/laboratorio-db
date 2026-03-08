@@ -6,7 +6,6 @@ import {
     ListTree,
     FileText,
     Binary,
-    Info
 } from 'lucide-react';
 
 export function ModeloRelacionalPage() {

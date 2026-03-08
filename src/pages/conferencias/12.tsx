@@ -1,5 +1,4 @@
 import {
-    Database,
     Search,
     Layers,
     ArrowRightLeft,

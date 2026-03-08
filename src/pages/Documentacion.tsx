@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
 import { conferencias } from '../data/conferencias';
 
 const highlightThemes = [

@@ -4,3 +4,6 @@ export * from "./Perfil";
 export * from "./Relaciones";
 export * from "./Documentacion";
 export * from "./ConferenciaWrapper";
+export * from "./Algoritmos";
+export * from "./GestionarRelaciones";
+export * from "./FdEditor";

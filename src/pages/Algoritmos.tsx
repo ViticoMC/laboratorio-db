@@ -17,9 +17,9 @@ import {
     Info,
     CheckCircle2,
 } from "lucide-react";
-import { RelationSetSelector } from "@/componentes/Algoritmos/RelationSetSelector";
-import { AlgorithmCard, ResultPanel, AttributeBadge, DFDisplay } from "@/componentes/Algoritmos/AlgorithmCommon";
-import { ExecutionTraceViewer } from "@/componentes/Algoritmos/ExecutionTraceViewer";
+import { RelationSetSelector } from "@/componentes/algoritmos/RelationSetSelector";
+import { AlgorithmCard, ResultPanel, AttributeBadge, DFDisplay } from "@/componentes/algoritmos/AlgorithmCommon";
+import { ExecutionTraceViewer } from "@/componentes/algoritmos/ExecutionTraceViewer";
 
 // Algoritmos
 import { aspirina } from "@/utils/algoritmos/aspirina";

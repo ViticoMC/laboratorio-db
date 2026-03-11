@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PlusCircle, Database, Search, Filter, ArrowUpRight } from "lucide-react";
 import { useRelaciones } from "@/hooks/useRelaciones";
-import { RelationCard, RelationDetail, EmptyState } from "@/componentes/Relaciones/RelacionesComponents";
+import { RelationCard, RelationDetail, EmptyState } from "@/componentes/relaciones/RelacionesComponents";
 
 export function Relaciones() {
     const { relaciones, loading, error, refresh } = useRelaciones();

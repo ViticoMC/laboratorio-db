@@ -1,47 +1,26 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Database, BookOpen, Clock, Activity, ListChecks, UserCircle, Settings } from "lucide-react";
-import { relationService } from "@/services/relation.service";
-import { fdSetService } from "@/services/fdSet.service";
-import type { Relation } from "@/types/database";
+
+import { useGetInfoDashboard } from "@/hooks";
+import { MainCard } from "@/componentes";
+import RelacionesCard from "@/componentes/dashboard/RelacionesCard";
 
 export function Dashboard() {
-    const [relaciones, setRelaciones] = useState<Relation[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [stats, setStats] = useState({
-        totalFdSets: 0,
-        totalRelaciones: 0
-    });
+    const { state, dashboardInfo } = useGetInfoDashboard()
 
-    useEffect(() => {
-        async function loadData() {
-            try {
-                const data = await relationService.getAll();
-                setRelaciones(data);
-
-                let totalSets = 0;
-                for (const rel of data) {
-                    const sets = await fdSetService.getByRelationId(rel.id);
-                    totalSets += sets.length;
-                }
-
-                setStats({
-                    totalRelaciones: data.length,
-                    totalFdSets: totalSets
-                });
-            } catch (error) {
-                console.error("Error loading dashboard data:", error);
-            } finally {
-                setLoading(false);
-            }
-        }
-        loadData();
-    }, []);
-
-    if (loading) {
+    if (state?.state === "loading") {
         return (
             <div className="flex h-screen items-center justify-center bg-background">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+            </div>
+        );
+    }
+
+    if (state?.state === "error" || !dashboardInfo) {
+        return (
+            <div className="flex h-screen  text-highlight-yellow items-center justify-center bg-background">
+                <h1 className="text-2xl">Ha ocurrido un error </h1>
+                <p className="text-2xl">{state?.message}</p>
             </div>
         );
     }
@@ -60,40 +39,25 @@ export function Dashboard() {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-                {/* Active Relations Card */}
-                <div className="p-6 rounded-2xl bg-surface border border-border shadow-sm hover:border-primary transition-all group">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                            <Database className="h-6 w-6" />
-                        </div>
-                    </div>
-                    <h3 className="text-text-secondary text-xs font-bold uppercase tracking-wider mb-1">Relaciones Creadas</h3>
-                    <p className="text-4xl font-bold text-text-primary">{stats.totalRelaciones}</p>
-                </div>
-
-                {/* FD Sets Card */}
-                <div className="p-6 rounded-2xl bg-surface border border-border shadow-sm hover:border-secondary transition-all">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 rounded-lg bg-secondary/10 text-secondary">
-                            <ListChecks className="h-6 w-6" />
-                        </div>
-                    </div>
-                    <h3 className="text-text-secondary text-xs font-bold uppercase tracking-wider mb-1">Conjuntos de Atributos</h3>
-                    <p className="text-4xl font-bold text-text-primary">{stats.totalFdSets}</p>
-                </div>
-
-                {/* Quick Docs Card */}
-                <div className="p-6 rounded-2xl bg-surface border border-border shadow-sm hover:border-accent transition-all">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 rounded-lg bg-accent/10 text-accent">
-                            <BookOpen className="h-6 w-6" />
-                        </div>
-                    </div>
-                    <h3 className="text-text-secondary text-xs font-bold uppercase tracking-wider mb-1">Documentación</h3>
-                    <Link to="/documentacion" className="text-accent text-sm font-medium flex items-center gap-1 hover:underline">
-                        Ver guías de estudio <ArrowRight className="h-3 w-3" />
-                    </Link>
-                </div>
+                <MainCard
+                    data={String(dashboardInfo.relaciones.length)}
+                    icon={Database}
+                    title="Relaciones Creadas"
+                    color="primary"
+                />
+                <MainCard
+                    data={String(dashboardInfo.totalSetDF)}
+                    icon={ListChecks}
+                    title="Conjuntos de Atributos"
+                    color="secondary"
+                />
+                <MainCard
+                    data={"Ver guías de estudio ->"}
+                    icon={BookOpen}
+                    title="Documentación"
+                    url="/documentacion"
+                    color="accent"
+                />
             </div>
 
             {/* Main Content Grid */}
@@ -111,26 +75,8 @@ export function Dashboard() {
                     </div>
 
                     <div className="space-y-4">
-                        {relaciones.length > 0 ? (
-                            relaciones.slice(0, 5).map((rel) => (
-                                <Link
-                                    key={rel.id}
-                                    to={`/relaciones/gestionar?id=${rel.id}`}
-                                    className="flex items-center justify-between p-4 bg-background hover:bg-surface-elevated border border-border rounded-xl transition-all group"
-                                >
-                                    <div>
-                                        <p className="font-bold text-text-primary group-hover:text-primary transition-colors">
-                                            {rel.name}
-                                        </p>
-                                        <p className="text-sm text-text-secondary">
-                                            {rel.description || "Sin descripción"}
-                                        </p>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <ArrowRight className="h-5 w-5 text-text-secondary group-hover:translate-x-1 group-hover:text-primary transition-all" />
-                                    </div>
-                                </Link>
-                            ))
+                        {dashboardInfo.relaciones.length > 0 ? (
+                            dashboardInfo.relaciones.slice(0, 5).map((rel) => <RelacionesCard key={rel.id} rel={rel} />)
                         ) : (
                             <div className="text-center py-12 border-2 border-dashed border-border rounded-xl">
                                 <Database className="h-10 w-10 text-text-secondary mx-auto mb-3 opacity-20" />

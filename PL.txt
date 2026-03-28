@@ -1,0 +1,100 @@
+La Práctica Preprofesional  II debe enfrentar problemas reales que requieran de la aplicación de los conocimientos de programación y la tecnología de las bases de datos. 
+
+Objetivos Generales de la Práctica:
+
+1.      Enfrentar problemas reales que requieran de la aplicación de los conocimientos de programación y la tecnología de las bases de datos, consolidando su capacidad para la solución de problemas propios de la profesión e interdisciplinarios.
+
+2.      Consolidar hábitos de búsqueda de literatura científica, en inglés y español.
+
+3.      Consolidar hábitos de trabajo colectivo.
+
+4.      Desarrollar la expresión escrita y oral, mediante la escritura de trabajos de curso y su defensa ante el tribunal evaluador.
+
+Los trabajos deberán dar solución a los problemas del banco de problemas de empresas e instituciones de Sectores estratégicos priorizados, que contribuyan al desarrollo económico del país.
+
+Sectores Estratégicos Priorizados. 
+
+-Turismo, Industria Biotecnológica y Farmacéutica, Electroenergético, Producción de alimentos, Construcciones, Telecomunicaciones e Informática, Logística, Redes Hidráulicas y Sanitarias, Agroindustria Azucarera, Industria Ligera, Servicios Técnicos Profesionales.
+
+ 
+
+Entidades Laborales de Base. Son los centros con los cuales la UCLV ya tiene vinculación, a través de Trabajos de Diploma y Práctica Laborales. Esto facilita el establecimiento de cualquier convenio de colaboración:
+
+ 
+
+Entidades Laborales de Base (ELB)
+
+Empresa de Telecomunicaciones de Cuba SA. ETECSA (MIC)
+
+OBE Sancti Spíritus de la Unión de Eléctricos (UNE)
+
+Ministerio de Ciencia, Tecnología y Medio Ambiente, CITMA  Villa Clara
+
+Empresa de Servicios Técnicos Industriales División Datazucar del Grupo Empresarial AZCUBA VC
+
+MININT Villa Clara
+
+Complejo escultórico Ernesto Che Guevara
+
+Geocuba Villa Clara
+
+MINFAR
+
+Empresa de Proyectos de Ingeniería ENPA - MINAG
+
+Empresa de Servicios Informáticos y Audiovisuales CINESOFT MINED
+
+Empresa de Tecnologías de la Información y Servicios Telemáticos Avanzados CITMATEL VC
+
+Centro de Inmunología Molecular
+
+Industria Nacional Productora de Utensilios Domésticos de Santa Clara INPUD
+
+EMPRESTUR - Sancti Spíritus
+
+Hospital Celestino Hernández Robau Santa Clara
+
+Asamblea del Poder Popular- Santa Clara
+
+Fábrica de Cemento Cienfuegos
+
+Joven Club - Palacio de Computación en Santa Clara
+
+Empresa de Proyectos de Ingeniería  y Arquitectura EMPROY VC
+
+Centro de Información y Gestión Tecnológica CIGET Villa Clara
+
+AZCUBA Cienfuegos
+
+ 
+
+La práctica se puede desarrollar también vinculándose a un grupo de investigación del CII, dando cumplimiento a la tarea que le se le asigne en dicho grupo. 
+
+Pueden agruparse en equipos de hasta tres estudiantes. 
+
+ 
+
+1er informe de la prácticaTarea
+ 
+
+El documento a entregar deberá contener:      
+
+         Miembros del equipo.
+
+·        Nombre del Centro Laboral donde se desarrollará la PL.
+
+·        Empresa, Organismo, Ministerio, etc. a la que está subordinada.
+
+·        Sector Estratégico con el que se vincula.
+
+·        Indicar si es alguna de las ELB de las que aparecen en la tabla.
+
+·        Nombre, apellidos, responsabilidad, vías de comunicación (teléfono, ..., correo) del 
+funcionario de la empresa que actuará como contraparte en la investigación. Esta persona tendrá que emitir, al final de la práctica, un documento avalando el trabajo realizado.
+
+·        Descripción del problema que se les presenta; así como del encargo computacional que se va a realizar por parte del equipo. 
+Nota: de compartirse el mismo problema para desarrollar el Trabajo de curso de SBDII, en la práctica se debe hacer la implementación de la aplicación
+
+fecha de entrega: 13 de diciembre
+
+Este informe no tendrá una calificación pero cada equipo tendrá una respuesta de aceptación o rechazo

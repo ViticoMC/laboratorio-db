@@ -1,0 +1,17 @@
+
+Requisitos del informe :    
+
+         Miembros del equipo.
+
+·        Nombre del Centro Laboral donde se desarrollará la PL.
+
+·        Empresa, Organismo, Ministerio, etc. a la que está subordinada.
+
+·        Sector Estratégico con el que se vincula.
+
+·        Indicar si es alguna de las ELB de las que aparecen en la tabla.
+
+·        Nombre, apellidos, responsabilidad, vías de comunicación (teléfono, ..., correo) del 
+funcionario de la empresa que actuará como contraparte en la investigación. Esta persona tendrá que emitir, al final de la práctica, un documento avalando el trabajo realizado.
+
+·        Descripción del problema que se les presenta; así como del encargo computacional que se va a realizar por parte del equipo. 

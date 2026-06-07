@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "@/componentes/ThemeToggle";
-import { Home, LayoutDashboard, User, Share2, FileText, Zap } from "lucide-react";
+import { Home, LayoutDashboard, Share2, FileText, Zap } from "lucide-react";
 
 export default function NavBar() {
   const location = useLocation();
@@ -11,7 +11,7 @@ export default function NavBar() {
     { to: "/relaciones", label: "Relaciones", icon: <Share2 size={18} /> },
     { to: "/algoritmos", label: "Algoritmos", icon: <Zap size={18} /> },
     { to: "/documentacion", label: "Documentación", icon: <FileText size={18} /> },
-    { to: "/perfil", label: "Perfil", icon: <User size={18} /> },
+    // { to: "/perfil", label: "Perfil", icon: <User size={18} /> },
   ];
 
   return (

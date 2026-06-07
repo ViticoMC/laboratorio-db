@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Database, BookOpen, Clock, Activity, ListChecks, UserCircle, Settings } from "lucide-react";
+import { Database, BookOpen, Clock, Activity, ListChecks, UserCircle, Settings } from "lucide-react";
 
 import { useGetInfoDashboard } from "@/hooks";
 import { MainCard } from "@/componentes";

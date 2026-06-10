@@ -28,6 +28,8 @@ jobs:
 
       - name: Install frontend dependencies
         run: pnpm install
+      - name: Approve pnpm builds
+        run: pnpm approve-builds
 
       - name: Build Tauri app (Windows)
         run: pnpm tauri build --bundles msi nsis
